@@ -5,16 +5,12 @@ import java.io.InputStreamReader;
 import java.util.Date;
 import java.text.ParseException; 
 import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
-import static java.time.temporal.TemporalQueries.localDate;
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.regex.*;
 
 public class Main {
    
    public static void main(String[] args) throws IOException{
-      Encriptador encriptador = new Encriptador();
       ArrayList<Usuario> usuarios = new ArrayList<>();
       BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
       System.out.println("***** SISTEMA DE REGISRO DE USUARIOS *****\n");
@@ -72,8 +68,7 @@ public class Main {
                      "Fecha de nacimiento: " + usuarios.get(i).getFechaNac().getYear() + "-" + 
                      usuarios.get(i).getFechaNac().getMonth() + "-" + usuarios.get(i).getFechaNac().getDate() +".\n" +
                      "Edad: " + usuarios.get(i).getEdad() + ".\n" +
-                     "Clave: " + new String(usuarios.get(i).getClave()) + "\n" +
-                     "Clave desencriptada: " + new String(encriptador.desencriptar(usuarios.get(i).getClave())) + "."
+                     "Clave: " + usuarios.get(i).getClave() + "."
                   );
                }
             }

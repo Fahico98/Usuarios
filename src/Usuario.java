@@ -1,8 +1,5 @@
 
 import java.util.Date;
-import java.text.ParseException; 
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
 
 public class Usuario {
    
@@ -12,7 +9,7 @@ public class Usuario {
    private long documentoId;
    private Date fechaNac;
    private int edad;
-   private byte[] clave;
+   private String clave;
    
    public Usuario(String nombre, long documentoId, Date fechaNac){
       this.nombre = nombre;
@@ -52,12 +49,12 @@ public class Usuario {
       this.fechaNac = fechaNac;
    }
    
-   public byte[] getClave() {
+   public String getClave() {
       return clave;
    }
    
    public void setClave(String clave) {
-      this.clave = encriptador.encriptar(clave.getBytes());
+      this.clave = clave;
    }
    
    public int getEdad() {
